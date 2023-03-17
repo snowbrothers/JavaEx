@@ -6,6 +6,7 @@ public class Fix {
 
 		System.out.println(" 확인 ");
 		System.out.println(" 재수정 ");
+		System.out.println(" 재재수정 ");
 	}
 
 }
