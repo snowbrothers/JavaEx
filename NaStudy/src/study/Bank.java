@@ -12,9 +12,9 @@ public class Bank {
 		
 		
 		
+		Scanner scan = new Scanner(System.in); // 사용자의 입력을 받아야 하기 때문에 scanner 사용
 		boolean run = true;
 		int total = 0; // 합해줄 거니까 변수 하나 선언 /초기화
-		Scanner scan = new Scanner(System.in); // 사용자의 입력을 받아야 하기 때문에 scanner 사용
 		int money = 0;
 		
 		while (run) {
@@ -77,7 +77,7 @@ public class Bank {
 		} // while 중괄호
 		
 		
-	
+	scan.close();
 		
 		
 		
