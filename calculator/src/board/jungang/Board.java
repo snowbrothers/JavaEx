@@ -18,7 +18,7 @@ public class Board {
 	// 생성자의 특징.
 	// 반환 타입이 없다 / 클래스이름과 동일한 타입을 가진다.
 	public Board(String title, String content ) {
-		this(title, content , "로그인한 회원 아이디 ", "작성일", 0);
+		this(title, content , "로그인한 회원 아이디 test ", "작성일", 0);
 		
 		/* this.title = title;
 		this.content = content;
