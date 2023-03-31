@@ -10,8 +10,8 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		Person per = new Student();
-		Person per1 = new Employee();
+//		Person per = new Student();
+//		Person per1 = new Employee();
 
 		Student[] infoArr = new Student[3];
 
@@ -37,7 +37,9 @@ public class Application {
 		int j = 1;
 
 		boolean run = true;
-		while (run) {
+
+		
+		Out: while (run) {
 
 			System.out.println(i + " 번째index 의 값을 차례대로 입력해주세요.");
 			System.out.println("이름, 나이, 키, 몸무게, 급여, 부서 | 순 입니다.");
@@ -54,22 +56,26 @@ public class Application {
 			System.out.println("현재 입력한 횟수 " + j);
 			j++;
 
-			System.out.println("=====================================");
-			System.out.println(" 계속추가하고자 하면 'y' 종료하고자 하면 'n' 를 입력해주세요");
-
-			String str = scan.next();
-
 			
-			// 다른 값을 입력했을때 
-			if (str.equals("y")) {
-				System.out.println("정보를 입력해주세요");
+			// 다른 값을 입력했을때
+			while (true) {
 
-			} else if (str.equals("n")) {
-				break;
-			} else {
-				System.out.println(" =========================================== ");
-				System.out.println("다시 입력해주세요");
+				System.out.println("=====================================");
+				System.out.println(" 계속추가하고자 하면 'y' 종료하고자 하면 'n' 를 입력해주세요");
+				String str = scan.next();
+
+				if (str.equals("y")) {
+					System.out.println("정보를 입력해주세요");
+						break;
 			
+				} else if (str.equals("n")) {
+					break Out;
+				
+				} else {
+					System.out.println(" =========================================== ");
+					System.out.println("다시 입력해주세요");
+
+				}
 			}
 
 			i++;
@@ -89,13 +95,13 @@ public class Application {
 
 		// 입력된 인덱스의 방만큼 출력
 		// 기본값은 null 오류 날때는 null 값을 처리해주어여햐마...
-		
+
 		for (int k = 0; k < j; k++) {
-			if(infoArr2[k] == null) {
+			if (infoArr2[k] == null) {
 				System.out.println("종료되었습니다.");
 				break;
 			}
-		
+
 			System.out.println(infoArr2[k].information());
 
 			// 입력된 인덱스의 방만큼 출력
