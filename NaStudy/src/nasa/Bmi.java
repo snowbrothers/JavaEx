@@ -46,7 +46,7 @@ public class Bmi {
 				System.out.println("비만 입니다.");
 			}
 
-			System.out.println("종료: q / 계속 : Any Button");
+			System.out.println("\n종료: q / 계속 : Any Button");
 			
 			
 			String str = scan.next();

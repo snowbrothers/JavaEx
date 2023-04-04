@@ -1,12 +1,14 @@
 package sec01.exam04;
 
 // final 키워드 : 부모클래스가 될 수 없음.
+
 //public final class Airplane {
 public class Airplane {
 
 	// 부모 클래스
 	public Airplane() {
 		System.out.println("===== Airplane");
+
 	}
 
 	public void land() {

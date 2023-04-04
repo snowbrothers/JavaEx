@@ -11,7 +11,6 @@ public class People {
 	}
 	
 	public People(String name , String ssn){
-		super();
 		
 		this.name = name;
 		this.ssn = ssn;
