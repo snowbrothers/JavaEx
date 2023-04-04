@@ -8,6 +8,10 @@ public class Book {
 	private boolean isRent;
 	
 	
+	public Book() {
+		
+	}
+	
 	public Book(int number, String title, String author, boolean isRent) {
 
 		this.number = number;

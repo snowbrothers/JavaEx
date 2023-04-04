@@ -8,6 +8,7 @@ public class Library {
 	
 	List<Book> bookList = new ArrayList<>();
 	
+	
 	public Library() {
 		
 		bookList.add(new Book(1, "책1", "작가1", false));
@@ -86,13 +87,15 @@ public class Library {
 				if(!book.isRent()) {
 					
 					System.out.println("반납 할 수 없는 도서 입니다.");
-					
+					break;
+				
 				}
 				
 				
 				book.setRent(false);
 				System.out.println("책이 반납되었습니다 : " + book.toString());
-				return false;
+				break;
+				
 			}
 		}
 		
