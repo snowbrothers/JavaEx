@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/com/chap2/컬렉션프레임워크.pptx</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Downloads/13_1_%EC%BB%AC%EB%A0%89%EC%85%98%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC.pptx</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

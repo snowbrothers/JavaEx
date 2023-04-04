@@ -40,13 +40,20 @@ public class Library {
 		// 책의 리스트를 조회 ( 파일 또는 DB 를 이용해서 조회 )
 		// 책을 생성해서 List 에 담아 준다.
 		// TODO : 일련번호가 겹치지 않았으면 좋겠음. 중복검사?
-
+		
+		// 파일로 읽어서 책을 생성.
+		bookList = dao.getBookList();
+		System.out.println(bookList);
+		System.out.println("라이브러리 생성자");
+		System.out.println("도서목록");
+		//info();
+		
 		// 데이터베이스를 이용할 경우 번호를 기본 Key 로 사용 시 
 		// 중복된 번호는 입력이 안되므로 오류 발생
-		bookList.add(new Book(1, "책1", "작가1", false));
-		bookList.add(new Book(2, "책2", "작가2", false));
-		bookList.add(new Book(3, "책3", "작가3", false));
-		bookList.add(new Book(4, "책4", "작가4", false));
+//		bookList.add(new Book(1, "책1", "작가1", false));
+//		bookList.add(new Book(2, "책2", "작가2", false));
+//		bookList.add(new Book(3, "책3", "작가3", false));
+//		bookList.add(new Book(4, "책4", "작가4", false));
 
 	}
 
@@ -65,9 +72,15 @@ public class Library {
 
 		// bookList.add(new Book(no, title, author, isRent);
 		Book book = new Book(no, title, author, isRent);
-
+		
+//		if(bookList == null) {
+//			
+//			return false;
+//		}
+		
+		
 		bookList.add(book);
-		dao.insertBook(book);
+		dao.insertBook(bookList);
 		return true;
 	}
 
@@ -94,7 +107,7 @@ public class Library {
 				}
 				
 				bkk.setRent(true);
-				dao.updatBook(bkk);
+				dao.updatBook(bookList);
 				return true;
 			}
 
@@ -123,7 +136,7 @@ public class Library {
 				}
 
 				bkk.setRent(false);
-				dao.updatBook(bkk);
+				dao.updatBook(bookList);
 				System.out.println("반납이 완료되었습니다" );
 				bkk.info();
 				
@@ -161,7 +174,7 @@ public class Library {
 
 			if(index == bkk.getNumber()) {
 				
-				dao.deleteBook(bkk);
+				dao.deleteBook(bookList);
 				return bookList.remove(bkk);
 			}
 		}
@@ -177,18 +190,22 @@ public class Library {
 	public void info() {
 		System.out.println("===============================");
 		// 리스트를 돌면서 책의 정보를 출력
-
-		for (Book bkk : bookList) {
+		
+		if(bookList == null) {
+			System.out.println("책목록이 비었습니다.");
+			return;
+		}
+		for (Book book : bookList) {
 
 			// 책의 정보를 출력.
-			bkk.info();
+			book.info();
 		}
 	}
 	
 	
 	public static void main(String[] args) {
 		
-		Library lib = new Library("db");
+		Library lib = new Library(" ");
 		
 		// 도서 리스트 출력
 		lib.info();
