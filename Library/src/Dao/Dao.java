@@ -13,12 +13,12 @@ public interface Dao {
 	 List<Book> getBookList(); 
 	 
 	 // 신규 도서 등록
-	 int insertBook(Book book);
+	 int insertBook(List<Book> list);
 
 	 // 도서 삭제
-	 int deleteBook(Book book);
+	 int deleteBook(List<Book> list);
 
 	 // 도서정보 업데이트
-	 int updatBook(Book book);
+	 int updatBook(List<Book> list);
 
 }

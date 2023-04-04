@@ -16,6 +16,16 @@ public class Book {
 	// 대여자 추가
 	// 대여일 추가
 
+	@Override
+	public String toString() {
+
+		
+		
+		return getNumber() 
+					+" "+ getTitle() 
+					+" "+  getAuthor() 
+					+" "+  isRent;
+	}
 	
 	public Book(int number, String title, String author, boolean isRent) {
 
@@ -32,6 +42,7 @@ public class Book {
 	public void info() {
 		
 		String str = " ";
+		
 		if(isRent) {
 			
 			str = "대여중 입니다.";
