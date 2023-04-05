@@ -30,7 +30,7 @@ public class FileByteStreamEx {
 		
 		
 		
-		//파일로부터 데이터를 읽어올 때 Read 메소드 사용
+		// 파일로부터 데이터를 읽어올 때 Read 메소드 사용
 		// 실제 데이터 양 측정 불가
 		// 읽을 데이터가 없으면 -1 리턴
 		// 반복문 사용 read() => -1 까지
@@ -49,11 +49,11 @@ public class FileByteStreamEx {
 		
 			
 			
-//			while((value =fis.read()) != -1) {
-//				System.out.print((char)value);
-//				
-//				
-//			}
+			while((value =fis.read()) != -1) {
+			System.out.print((char)value);
+				
+				
+			}
 			
 			
 			
@@ -84,6 +84,7 @@ public class FileByteStreamEx {
 		FileOutputStream fos = null;
 		
 		try {
+			
 			// 프로젝트 내부에 파일 생성
 			fos = new FileOutputStream("a_byte.dat");
 			// 문자 출력 스트림

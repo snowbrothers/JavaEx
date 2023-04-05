@@ -14,7 +14,7 @@ public class A_File {
 		
 		// 메소드 실행 : 레퍼런스 변수에 주소접근연산자 (.)도트 연산자를 통해서 실행
 		//a.method1();
-		a.method2();
+		a.method1();
 	}
 	
 	
@@ -25,6 +25,7 @@ public class A_File {
 		
 		//디렉토리 생성
 		File dir = new File("d:/test");
+		
 		try {
 			// 디렉토리 생성 코드 
 			dir.mkdir();
@@ -43,6 +44,7 @@ public class A_File {
 		
 	}
 	public void method1() {
+
 		// 경로를 지정하지 않으면 현재 프로젝트폴더에 파일을 생성합니다.
 		// 메모리 상에만 존재
 		
@@ -59,6 +61,7 @@ public class A_File {
 		// 파일 생성 후 꼭 새로고침 할 것.
 		
 		try {
+			
 			file.createNewFile();
 		
 		} catch (IOException e) {
