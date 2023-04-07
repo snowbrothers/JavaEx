@@ -2,7 +2,7 @@ package connection;
 
 import java.util.Date;
 
-public class Book {
+public class Book { 
 
 	int no; 
 	String title; 
