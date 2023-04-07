@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import dao.Dao;
-import dao.FileDao;
+import dao.connection.Dao;
+import dao.connection.FileDao;
+
 
 public class App {
 
@@ -19,7 +20,7 @@ public class App {
 
 		// 라이브러리 생성
 		// 생성만 하면 파일을 읽어와서 출력함.
-		Library lib = new Library(); // 도서 목록 출력
+		Library lib = new Library("DB"); // 도서 목록 출력
 
 		// 생성자 호출 메서드 사용하기 위해서. // app 을 생성하지 않고 메서드를 사용 할 수 없다.
 		// main 메소드는 static메소드 정적메소드
@@ -27,9 +28,8 @@ public class App {
 		// 생성하고 사용해야 한다.
 
 		App app = new App();
-
+		
 		while (true) {
-
 			// 자주 사용하는 로직은 메소드로 빼서 만들면 코드가 간결해집니다.
 			// 스캐너 로 입력을 받아서 리턴 해주는 역할
 			// 로그인

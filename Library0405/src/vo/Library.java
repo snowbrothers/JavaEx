@@ -1,11 +1,11 @@
 package vo;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import dao.Dao;
-import dao.FileDao;
+import dao.connection.Dao;
+import dao.connection.Dbdao;
+import dao.connection.FileDao;
 
 public class Library {
 
@@ -26,6 +26,22 @@ public class Library {
 		System.out.println(toString());
 
 	}
+	
+	public Library(String daotType) {
+		if(daotType.equals("DB")) {
+			
+			dao = new Dbdao();
+			System.out.println("Db로 접근=======");
+		}
+		// 반환타입 확인하고 변수에 담을것, getList 의 반환 타입은 list
+		list = dao.getList();
+		// 리스트를 초기화 // 필드를 초기화
+		
+		//System.out.println("list : " + list);
+		//System.out.println(toString());
+
+	}
+	
 
 	// 책의 정보를 받아서
 	// 리스트에 등록 후 파일로 출력합니다.
@@ -82,7 +98,6 @@ public class Library {
 
 		System.out.println("책 목록 ================== lib");
 		String info = "";
-		
 		
 		// 정렬
 		Collections.sort(list);
@@ -154,6 +169,7 @@ public class Library {
 						dao.listToFile(list);
 						boolean res = dao.listToFile(list);
 						
+						int i = dao.update(no);
 						
 						if (!res) {
 							book.setRent(false);
@@ -199,8 +215,12 @@ public class Library {
 					book.setRent(false);
 
 					dao.listToFile(list);
+					
+					
 					System.out.println("도서가 반납되었습니다.");
 					return true;
+					
+					
 					
 				} else {
 
