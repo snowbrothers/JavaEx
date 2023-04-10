@@ -16,6 +16,7 @@ public class JDBCEx {
 
 	// 데이터 베이스에 접근시 필요한 정보
 	// ip, port, sid, 계정정보, 비밀번호 
+	
 	static  String url = "jdbc:oracle:thin:@localhost:1521:orcl";  // 주소
 	static String id = "orauser"; // 아이디
 	static String pw = "1234"; // 비밀번호
@@ -240,6 +241,7 @@ public void update() {
 			
 			
 			List<Book> list = new ArrayList<>();
+			
 			while(res2.next()) {
 			
 				
