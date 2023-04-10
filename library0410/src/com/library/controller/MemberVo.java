@@ -7,7 +7,7 @@ public class MemberVo {
 	String name;
 	String adminYN; // 권한
 	
-	
+	 
 	@Override
 	public String toString() {
 
