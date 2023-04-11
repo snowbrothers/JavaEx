@@ -24,7 +24,7 @@ public class MemberService {
 			return memberVo;
 
 		} else {
-			System.out.println("아이디 / 비밀번호가 일치 하지 않거나 없는 계정입니다.");
+			System.err.println("아이디 / 비밀번호가 일치 하지 않거나 없는 계정입니다.");
 			
 			return null;
 		}

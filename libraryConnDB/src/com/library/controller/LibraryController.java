@@ -27,9 +27,12 @@ public class LibraryController {
 		
 	}
 	
+	
 	public MemberVo login() throws SQLException {
 				
+		
 		while(true) {
+			
 			System.out.println("로그인");
 			System.out.print("id : ");
 			String id = ScannerUtil.getString();		 

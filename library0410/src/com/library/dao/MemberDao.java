@@ -16,15 +16,18 @@ import com.library.dao.conn.DBUtil;
  */
 public class MemberDao {
 
+	// 타입을 MemberVo 로 주었기 때문에 저장 가능
 	public MemberVo login(String id, String pw) {
 
 		// .prepareStatement
 		// 매개변수를 '?' 로 입력
 
 		String sql = "select * from Member where id = ? and pw = ?";
-		System.out.println("id " + id);
-		System.out.println("pw " + pw);
-		try (Connection conn = DBUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) { // 쿼리문이
+		System.out.println("id " + id); // 사용자가 입력한 id, pw 를 출력 오타 확인
+		System.out.println("pw " + pw); 
+		
+		try (Connection conn = DBUtil.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);) { // 쿼리문이
 																												// 어디에
 																												// 들어가는지가
 																												// 조금 다름
