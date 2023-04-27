@@ -50,7 +50,7 @@ public class Application {
 		
 		BookService book = new BookService();
 		
-		book.getList();
+		
 		
 		
 		
