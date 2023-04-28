@@ -93,14 +93,11 @@ public class MemberDao {
 				ResultSet rs = stmt.executeQuery(sql)) {
 
 			
-				
-			
 			return !rs.next();
 				
 
 		} catch (SQLException e) {
-
-			System.err.println("중복검사 도중 오류가 발생 하였습니다.");
+			
 			e.printStackTrace();
 		}
 		

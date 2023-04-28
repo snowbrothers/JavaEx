@@ -2,6 +2,7 @@ package com.jungang;
 
 import java.util.List;
 
+import com.library.controller.LibraryController;
 import com.library.dao.BookDao;
 import com.library.dao.MemberDao;
 import com.library.service.BookService;
@@ -15,7 +16,8 @@ public class Application {
 		
 		
 		
-		
+		LibraryController lib = new LibraryController();
+		lib.library();
 		
 		
 		

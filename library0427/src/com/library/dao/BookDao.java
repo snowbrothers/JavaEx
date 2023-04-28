@@ -17,7 +17,10 @@ public class BookDao {
 
 		List<Book> list = new ArrayList<>();
 
-		String sql = "SELECT * FROM BOOK order by no";
+		String sql = "SELECT NO, TITLE, AUTHOR "
+				+ "    , NVL((SELECT 대여여부 FROM 대여 WHERE 도서번호 = no and 대여여부 = 'Y'),'N') rentYN "
+				+ " FROM BOOK"
+				+ " ORDER BY NO";
 
 		try (Connection conn = ConnectionUtil.getConnection();
 				Statement stmt = conn.createStatement();
@@ -31,7 +34,8 @@ public class BookDao {
 				String title = rs.getString(2);
 				String author = rs.getString(3);
 				String rentYN = rs.getString(4);
-
+			
+				
 				Book book = new Book(no, title, author, rentYN);
 
 				list.add(book);
@@ -109,14 +113,15 @@ public class BookDao {
 			res = stmt.executeUpdate(sql);
 			
 			
-			
+			return res;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return 0;
+		
+		return res;
 	}
 	
 	
@@ -179,6 +184,70 @@ public class BookDao {
 		return res;
 		
 		
+	}
+	
+	public boolean returnCheck(int no) {
+		
+		boolean check = false;
+		
+		
+		String sql = String.format("SELECT rentYN FROM BOOK WHERE NO = '%d'",no );
+		
+		
+		try(Connection conn = ConnectionUtil.getConnection();
+				Statement stmt = conn.createStatement(); 
+			ResultSet rs = stmt.executeQuery(sql);){
+			
+			
+			
+			return !rs.next(); 
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return check;
+	}
+
+	
+	
+	
+
+	public String getRentYN(int no) {
+		
+		
+		String rentYN = "";
+		
+		String sql = String.format("SELECT rentYN FROM BOOK WHERE NO = %d",no );
+		System.out.println(sql);
+		
+		
+		
+		try(Connection conn = ConnectionUtil.getConnection();
+				Statement stmt = conn.createStatement(); 
+			ResultSet rs = stmt.executeQuery(sql);){
+			
+			// 쿼리의 실행결과 -> 결과집합.
+			// rs.next << 읽어올 다음 행이 있으면 true / 없으면 false
+			if(rs.next()) {
+				
+				// DB에서 조회된 값을 변수에 저장
+				rentYN = rs.getNString(1);
+				
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return rentYN;
 	}
 	
 	

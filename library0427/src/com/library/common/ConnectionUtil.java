@@ -75,7 +75,7 @@ public class ConnectionUtil {
 			// -> 커넥션이 종료 되는 시점에 커밋
 			conn.setAutoCommit(false);
 			
-			System.out.println("- 커넥션 성공 -");
+//			System.out.println("- 커넥션 성공 -");
 			
 			//if(!conn.isClosed()) conn.close();
 		

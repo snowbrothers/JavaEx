@@ -6,9 +6,11 @@ public class Member {
 	private String id;
 	private String pw;
 	private String name;
-	private String adminYN;
-	private String status;
+	private String adminYN = "N";
+	private String status = "Y";
 	private String grade;
+	
+	
 	
 	
 	
