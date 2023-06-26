@@ -1,3 +1,4 @@
+<%@page import="com.library.vo.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +9,17 @@
 </head>
 <body>
 
+	<%@ include file="/common/header.jsp" %>
+
+	<%
+
+		// 세션에 저장된 멤버 객체로 부터 아이디를 출력 합니다.
+		if(session.getAttribute("member")!=null){
+			Member m = (Member)session.getAttribute("member");
+			
+	%>
+	
+	<%=m.getId()%>님 환영합니다.
 
 	<h2>관리자 메뉴</h2>
 
@@ -19,6 +31,12 @@
 	<li>관리자삭제</li>
 
 </ul>
+
+	<%
+		}
+	%>
+	
+	<button onclick ="location.href='logout.jsp'">로그아웃</button>
 
 
 </body>

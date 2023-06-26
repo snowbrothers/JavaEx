@@ -13,6 +13,7 @@ public class BookService {
 	 * @return
 	 */
 	public List<Book> getList(){
+		
 		List<Book> list = dao.getList();
 		for(Book book : list) {
 			System.out.println(book);

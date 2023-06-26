@@ -1,3 +1,5 @@
+<%@page import="com.utils.CookieManager"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,11 +29,15 @@
 			
 			<%
 		}
+		
+			String userId = CookieManager.readCookie(request, "userId");
+			
 		 %>
 	
 	<aside id='rightside'>
 	<div class='side1'>
-	<form action="loginAction.jsp" method="post"> 
+	
+	<form action="./login/LoginAction.do" method="post"> 
 	
 	
 	<div class='loginbox'>
@@ -39,7 +45,7 @@
 	
 		<div id='login'>
 	
-		<p><input type="text" name="userid" id="userid" placeholder='ID를 입력해주세요.'></p> 
+		<p><input type="text" name="userid" id="userid" placeholder='ID를 입력해주세요.' value="<%=userId%>"></p> 
 		<p><input type="password" name="userpw" id="userpw" placeholder='PW를 입력해주세요.'></p>
 	
 			</div>
@@ -49,6 +55,8 @@
 				</div>
 		</div>
 	<div id='info'>
+		<input type="checkbox" name="saveCheck" value="Y" 
+			<%=!("").equals(userId)?"checked" : ""%>>
 		<a href="">회원가입</a> <a href="">ID찾기</a> <a href="">PW찾기</a>
 	</div>
 	
