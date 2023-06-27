@@ -21,6 +21,7 @@
 		String loginErr = request.getParameter("loginErr");
 	
 		if("Y".equals(loginErr)){
+			
 			%>		
 		
 			<script type="text/javascript">

@@ -14,7 +14,7 @@
 	adminYN : ${sessionScope.adminYN }
 	
 	
-	<c:if test="${sessionScope.adminYN eq 'Y'}  " var="loginCheck">
+	<c:if test="${sessionScope.adminYN eq 'Y'}" var="loginCheck">
 	<!-- 어드민  -->
 		관리자
 		<div>로고</div>
@@ -25,15 +25,17 @@
 		<div>로그아웃</div>
 	</c:if>
 	
-	<c:if test="${not loginCheck }">
+	<!-- 사용자 -->
+	<c:if test="${not loginCheck}">
 		<div>로고</div>
 		<div>
 				<a href="">도서관리시스템</a>
 		</div>
 			<a href="">마이페이지</a>
-		
-	<!-- 로그인 전 사용자 -->
-		<c:if test="${empty sessionScope.userId }" var="res1">
+	<!-- 사용자 메뉴 종료 -->
+			
+	<!-- 로그인 전 -->
+		<c:if test="${empty sessionScope.userId}" var="res1">
 			<div>로그인</div>
 		</c:if>
 		
@@ -41,7 +43,7 @@
 	
 			<div>로그아웃</div>
 	</c:if>
-	<!-- 사용자 -->
+	<!-- 로그인 후 -->
 	
 	
 </header>
