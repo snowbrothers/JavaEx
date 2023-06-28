@@ -22,7 +22,9 @@
 			<a href="">도서관리</a>
 			<a href="">사용자관리</a>
 		</div>
-		<div>로그아웃</div>
+		<div>
+		<a href="../LogoutController">로그아웃</a></div>
+		
 	</c:if>
 	
 	<!-- 사용자 -->
