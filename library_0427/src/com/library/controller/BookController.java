@@ -34,17 +34,22 @@ public class BookController extends HttpServlet {
 		BookDao dao = new BookDao();
 
 		String uri = req.getRequestURI();
+		StringBuffer url = req.getRequestURL();
 		// 여러개의 요청을 하나의 컨트롤러에서 처리가능
 		// 단 컨트롤러 하나가 복잡해질 가능성이 있음.
-		System.out.println("요청 uri : " + uri);
+		System.out.println("요청 uri : " + uri); // /library_0427/book/list.book
 
+		//System.out.println("요청 url : " + url); http://localhost:8080/library_0427/book/list.book
+		
 		if (uri.indexOf("list") > 0) {
 
 			Criteria criteria = new Criteria(req.getParameter("searchField"), req.getParameter("searchWord"),
 					req.getParameter("pageNo"));
-
+			
+			// 리퀘스트 영역에 저장 lis
 			req.setAttribute("map", bs.getList(criteria));
 
+			// requset 영역에 저장했기때문에 forward 를 통해 이동한 페이지에서 리퀘스트 영역을 공유
 			req.getRequestDispatcher("./list.jsp").forward(req, resp);
 
 			// 요청한 경로에 포함된 문자 .확인

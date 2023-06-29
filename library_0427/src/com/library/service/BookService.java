@@ -31,9 +31,11 @@ public class BookService {
 		
 		System.out.println(totalCnt);
 		
+		// Map 은 key와 value 값으로 이루어져있음.
 		map.put("list", list);
 		map.put("totalCnt", totalCnt);
 		map.put("pageDto", pageDto);
+		
 		
 		return map;
 	}

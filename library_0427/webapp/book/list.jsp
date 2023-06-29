@@ -122,6 +122,8 @@ header{
 		</td>
 	</c:if>
 	
+	<!-- 리퀘스트 영역에 저장된 map 에서 list 를 뽑아온다.
+		향상된 for문 형식의 forEach문 -->
 	<c:forEach items="${map.list }" var="book" varStatus="loop">
 
 	<!-- <c:set var="rentYN" value="${book.rentyn }"/>
@@ -131,6 +133,7 @@ header{
 		<tr>
 			
 		
+			<!-- 삭제버튼을 누르면 체크 박스를 보여주도록하고 그후에 체크박스 선택 후 삭제 가능토록 하는것도 ..? -->
 			<td><input type="checkbox" name="delNo" value="${book.no}"></td>
 			<td>${book.no }</td>
 			<td><a href="../book/view.book?no=${book.no }">
@@ -140,6 +143,7 @@ header{
 			<td>${book.author }</td>
 		</tr>
 	
+	<!-- 페이징처리 모듈화 -->
 	</c:forEach>
 	
 	
