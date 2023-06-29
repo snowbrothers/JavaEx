@@ -14,6 +14,12 @@ import vo.Member;
 
 public class MemberDao {
 	
+	public static void main(String[] args) {
+		
+		MemberDao dao = new MemberDao();
+		dao.getList();
+		
+	}
 	
 	public List<Member> getList(){
 		List<Member> list = new ArrayList<Member>();

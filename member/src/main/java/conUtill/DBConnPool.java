@@ -27,14 +27,16 @@ public class DBConnPool {
 			initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
 			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
-			conn = ds.getConnection();
 
+			conn = ds.getConnection();
+			System.out.println("conn" + conn);
+			System.out.println("커넥션 성공 ! ! ! !");
 		
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+			System.out.println("커넥션 실패..... ! ! ! !");
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			 System.out.println("커넥션 실패..... ! ! ! !");
 			e.printStackTrace();
 		}
 		
